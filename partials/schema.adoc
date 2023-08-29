@@ -8,7 +8,7 @@
 ¦Name ¦Type ¦Description ¦Possible values
 // {% endif %}
 {% for propName, prop in schema.properties() -%}
-{{ schemaProp(prop, propName, required=(schema | required(propName)), path='') }}
+{{ schemaProp(prop, propName, required=(schema | isRequired(propName)), path='') }}
 {%- else -%}
 {{ schemaProp(schema, schemaName, path='') }}
 {%- endfor %}
